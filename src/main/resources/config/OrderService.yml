@@ -1,0 +1,17 @@
+server:
+  port: 8098
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:
+        http://eurekaserver2:8766/eureka,
+        http://eurekaserver1:8765/eureka
+spring:
+  application:
+    name: OrderService
+  zipkin:
+    baseUrl: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1 #100% (default = 10%)

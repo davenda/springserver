@@ -1,0 +1,19 @@
+server:
+  port: 8765
+
+eureka:
+  instance:
+    hostname: eurekaserver1
+    appname: eureka-cluster
+  environment: local
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaserver2:8766/eureka
+    register-with-eureka: true
+    fetch-registry: true
+spring:
+  zipkin:
+    baseUrl: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1 #100% (default = 10%)
